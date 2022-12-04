@@ -16,12 +16,14 @@
 
 3. sudo cp certs/my.crt /etc/docker/certs.d/dock01\:5002/ca.crt
 
+# check, if all works without restart
 4. sudo service docker restart
 
 5. sudo apt install apache2-utils
 
 6. mkdir auth
 
+# generate pairs for Basic Auth, save to file
 7. htpasswd -Bbn sand pass >> auth/htpasswd  # user: sand, password: pass
 
 # create and run registry2 container
