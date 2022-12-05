@@ -1,0 +1,243 @@
+    1  poweroff
+    2  sudo service docker status 
+    3  vim .bashrc 
+    4  sudo apt update
+    5  ./docker/scripts/install-docker
+    6  pwd
+    7  git
+    8  git clone https://github.com/a0z9/docker
+    9  cd docker/
+   10  ls -la
+   11  git pull
+   12  cd ..
+   13  mk docker-my
+   14  mkdir docker-my
+   15  ./docker/scripts/install-docker
+   16  id
+   17  groups
+   18  id
+   19  groups
+   20  docker ps
+   21  sudo usermod -aG docker student
+   22  groups
+   23  id
+   24  newgrp docker
+   25  groups
+   26  reboot
+   27  groups
+   28  id
+   29  docker ps
+   30  docker images
+   31  docker ps -a
+   32  sudo service docker status
+   33  sudo systemctl status docker
+   34  docker search getting
+   35  docker search --filter=stars=3 getting
+   36  docker pull docker/getting-started
+   37  docker images
+   38  docker inspect docker/getting-started:latest 
+   39  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/work
+   40  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/
+   41  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/lower
+   42  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/lower/
+   43  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff
+   44  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr
+   45  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/shar
+   46  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share
+   47  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share/nginx
+   48  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share/nginx/html
+   49  sudo cat /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share/nginx/html/index.html
+   50  sudo ls -la /var/lib/docker/overlay2/
+   51  sudo ls -l /var/lib/docker/overlay2/
+   52  sudo ls -l /var/lib/docker/overlay2/ | wc -l
+   53  sudo ls -l /var/lib/docker/overlay2/
+   54* 
+   55  docker run -d --name gs1 -p 8080:80  docker/getting-started
+   56  docker ps
+   57  docker run -dp 8081:80  docker/getting-started
+   58  docker ps
+   59  docker stop e
+   60  docker ps
+   61  docker ps -a
+   62  docker inspect e9b
+   63  docker ps -a
+   64  docker start interesting_wescoff
+   65  docker ps -a
+   66  docker pause  interesting_wescoff 
+   67  docker ps -a
+   68  docker top gs1
+   69  docker stat gs1
+   70  docker stats gs1
+   71  docker ps -a
+   72  docker run -dp 8081:80 docker/getting-started
+   73  docker ps -a
+   74  docker rm 89
+   75  docker ps -a
+   76  docker stop e
+   77  docker ps -a
+   78  docker run -dp 8081:80 docker/getting-started
+   79  docker ps -a
+   80  docker start e9
+   81  docker inspect e9
+   82  nan
+   83  nano
+   84  mc
+   85* 
+   86* 
+   87  docker start e9
+   88  sudo service docker restart
+   89  sudo service docker stop
+   90  sudo service docker start
+   91  docker start ce
+   92  docker start od
+   93  docker start 0d
+   94  docker start e9
+   95  docker ps
+   96  history -a
+   97  history
+   98  cd docker
+   99  mkdir history
+  100  history > history/hist_dock01_day1_1
+  101  git add .
+  102  git commit -m 'host init'
+  103  git config --global user.name a0z9
+  104  git config --global user.email a0z9@rambler.ru
+  105  git push
+  106  git add .
+  107  git commit -m 'host init'
+  108  git push
+  109  history -a
+  110  docker ps -a
+  111  docker logs e9
+  112  git pull
+  113  docker pull busybox
+  114  docker run -dit --name bbox1 busybox 
+  115  docker ps
+  116  top aux | gerp gs1
+  117  top aux | grep gs1
+  118  ps aux | grep gs1
+  119  ps aux | grep docker
+  120  docker top bbox1 
+  121  ps aux | grep 7352
+  122  ps aux | grep 7328
+  123  docker top bbox1 
+  124  sudo kill 7352
+  125  docker ps -a
+  126  docker top bbox1 
+  127  sudo kill -9 7352
+  128  docker top bbox1 
+  129  docker ps -a
+  130  docker start bbox1 
+  131  docker ps -a
+  132  docker top gs1
+  133  docker ps 
+  134  docker attach bbox1 
+  135  docker ps
+  136  docker ps -a
+  137  docker start bbox1 
+  138  docker attach bbox1 
+  139  docker ps -a
+  140  docker attach bbox1 --detach-keys='ctrl-p' 
+  141  docker attach bbox1 --detach-keys='ctrl-q' 
+  142  docker cp wapp.js bbox1:/mydirs/1
+  143  docker attach bbox1 --detach-keys='ctrl-q' 
+  144  docker ps -a
+  145  docker exec gs1 cat /mydirs/data/date1
+  146  docker exec bbox cat /mydirs/data/date1
+  147  docker exec bbox1 cat /mydirs/data/date1
+  148  docker exec bbox1 cat /mydirs/data/date2
+  149  docker exec bbox1 cat /mydirs/1/wapp.js
+  150  docker exec bbox1 ls -la /mydirs/1/
+  151  docker exec bbox1 ls -la /mydirs/1/ / /bin
+  152  docker exec bbox1 ls -la /mydirs/1/ /bin && ls /mydirs
+  153  docker exec bbox1 ls -la /mydirs/1/ /bin && ls /mydirs | grep wapp
+  154  docker exec bbox1 ls -la /mydirs/1/ /bin && ls /mydirs
+  155  docker exec bbox1 ls -la /mydirs/1/ && ls /mydirs | grep wapp
+  156  docker exec bbox1 sh -c 'ls -la /mydirs/1/ && ls /mydirs | grep wapp'
+  157  docker exec bbox1 sh -c 'ls -la /mydirs/1/ && ls /mydirs'
+  158  docker commit bbox1 mybbox/busy:1
+  159  docker images 
+  160  docker run -it --name bbox2 mybbox/busy:1
+  161  docker ps
+  162  docker history busybox:latest 
+  163  docker history mybbox/busy:1 
+  164  docker inspect bbox2
+  165  docker images
+  166  docker tag mybbox/busy:1 a0z9/box:0.1
+  167  docker images
+  168  docker login
+  169  docker push a0z9/box:0.1 
+  170  docker logout 
+  171  docker ps
+  172  docker rm -f bbox2
+  173  docker rmi mybbox/busy:1 
+  174  docker rmi a0z9/box:0.1 
+  175  docker images
+  176  docker search a0z9
+  177  docker search a0z9/box
+  178  docker pull a0z9/box
+  179  docker pull a0z9/box:0.1
+  180  docker images
+  181  docker run -d --name bb3 a0z9/box:0.1
+  182  docker ps -a
+  183  docker run -dit --name bb4 a0z9/box:0.1
+  184  docker ps -a
+  185  docker run -d --name bb-ping a0z9/box:0.1 ping 8.8.8.8
+  186  docker ps -a
+  187  docker logs bb-ping 
+  188  docker ps -a
+  189  docker rm bb-ping bb3 -f
+  190  docker ps -a
+  191  mkdir tars
+  192  docker export bb4 --output tars/bb4_export.tar
+  193  docker save a0z9/box --output tars/a0z9_box_save.tar
+  194  mc
+  195  docker import tars/bb4_export.tar bbox_imported
+  196  docker images
+  197  docker rmi --force a0z9/box:0.1 
+  198  docker ps -a
+  199  docker docker rm -f bb4
+  200  docker rm -f bb4
+  201  docker ps -a
+  202  docker images
+  203  docker rmi 6db
+  204  docker images
+  205  docker load --input tars/a0z9_box_save.tar 
+  206  docker images
+  207  docker ps
+  208  docker ps -q
+  209  docker pause $(docker ps -q)
+  210  docker ps
+  211  docker unpause $(docker ps -q)
+  212  docker ps
+  213  docker update gs1 --restart always
+  214  docker update ce19 --restart unless-stopped 
+  215  sudo service docker restart
+  216  docker ps
+  217  docker stop $(docker ps -q)
+  218  docker ps
+  219  sudo service docker restart
+  220  docker ps
+  221  docker start $(docker ps -qa)
+  222  docker ps
+  223  docker stats
+  224  docker run --help
+  225* docker 
+  226  docker update -m 220M --cpus 0.2 gs1 
+  227  docker update -m 20000000 --cpus 0.2 gs1 
+  228  docker stop gs1 
+  229  docker start -m 100M gs1 
+  230* docker start  
+  231  docker ps
+  232  docker update -m 20m bbox1
+  233  docker update -m 20000000 bbox1
+  234  docker update -m 200000000 bbox1
+  235  docker run --name bbox2 -dit -m 200000 busybox
+  236  docker run --name bbox2 -dit -m 7000000 busybox
+  237  docker top
+  238  docker start gs1 
+  239  docker update -m 20M --cpus 0.5 --memory-swap -1 gs1
+  240  docker update --cpus 0.5 bbox2
+  241  docker attach bbox2
+  242  history -a
+  243  history > history/hist_dock01_day1_2
