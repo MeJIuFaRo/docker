@@ -1,0 +1,18 @@
+FROM busybox
+
+LABEL maintainer="a0z9@rambler.ru"
+LABEL version="2.0"
+
+
+RUN mkdir /localdata && echo `date` > /localdata/date1 && date
+
+# RUN
+# RUN
+
+ENV VERSION 2.0
+ENV TRAINING DEC22
+
+WORKDIR /var/app
+COPY ./config .
+
+
