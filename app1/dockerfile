@@ -1,0 +1,15 @@
+FROM busybox
+
+LABEL maintainer="a0z9@rambler.ru"
+LABEL version="1.0"
+
+
+RUN mkdir /localdata && echo `date` > /localdata/date1 && date
+
+# RUN
+# RUN
+
+WORKDIR /var/app
+COPY ./config .
+
+
