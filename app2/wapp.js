@@ -1,8 +1,14 @@
 const http = require('http');
 
+const fs = require('fs');
 const os = require('os');
 
 console.log("Tiny http server starting...");
+
+const log_dir = '/var/log/wapp';
+
+if(!fs.existsSync(log_dir))
+fs.mkdirSync(log_dir, {recursive: true});
 
 var handler = function(request, response) {
 
@@ -15,6 +21,9 @@ var handler = function(request, response) {
   const host_ip = request.connection.localAddress;	
   console.log(dt +  "--> request from: " + addr + " to host: " +host_name);
   const dock_host = process.env.DOCK_HOST;
+
+  const content = `${dock_host} --> request ${addr} to ${host_name}.\n`;	
+  fs.writeFile(`${log_dir}/wapp.log`, content, {flag: 'a+'}, err => {});
 
   var body = 
   `<html>
