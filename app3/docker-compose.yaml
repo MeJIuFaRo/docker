@@ -15,9 +15,44 @@ services:
       - VERSION=1.0
       - DOCK_HOST=dock01
 
+  wapp1:
+    build: ./wapp
+    ports:
+      - "8091:8080"
+    environment:
+      - DOCK_HOST=WAPP_HOST      
+    volumes:
+      - "wapp_vol:/var/log/wapp"
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.50'
+          memory: 100M
+
+  bbox:
+    image: busybox
+    command: dd if=/dev/zero of=/dev/null bs=4096
+    depends_on:
+      - wapp1
+
+    deploy:
+      resources:
+        limits:
+          cpus: '0.60'
+          memory: 10M  
+
+
 networks:
-  net2:
+  default:
+    name: mynet
+    ipam:
+      driver: default
+      config: 
+        - subnet: 172.30.30.0/24
+          gateway: 172.30.30.1      
+          
 
 volumes:
   vol2:
-
+  wapp_vol:
