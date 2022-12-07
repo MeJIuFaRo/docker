@@ -1,0 +1,782 @@
+    1  poweroff
+    2  sudo service docker status 
+    3  vim .bashrc 
+    4  sudo apt update
+    5  ./docker/scripts/install-docker
+    6  pwd
+    7  git
+    8  git clone https://github.com/a0z9/docker
+    9  cd docker/
+   10  ls -la
+   11  git pull
+   12  cd ..
+   13  mk docker-my
+   14  mkdir docker-my
+   15  ./docker/scripts/install-docker
+   16  id
+   17  groups
+   18  id
+   19  groups
+   20  docker ps
+   21  sudo usermod -aG docker student
+   22  groups
+   23  id
+   24  newgrp docker
+   25  groups
+   26  reboot
+   27  groups
+   28  id
+   29  docker ps
+   30  docker images
+   31  docker ps -a
+   32  sudo service docker status
+   33  sudo systemctl status docker
+   34  docker search getting
+   35  docker search --filter=stars=3 getting
+   36  docker pull docker/getting-started
+   37  docker images
+   38  docker inspect docker/getting-started:latest 
+   39  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/work
+   40  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/
+   41  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/lower
+   42  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/lower/
+   43  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff
+   44  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr
+   45  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/shar
+   46  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share
+   47  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share/nginx
+   48  sudo ls -la /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share/nginx/html
+   49  sudo cat /var/lib/docker/overlay2/3993c18fc58e93ccee46db49d9b419776eed2157016e9eacd214201188b31206/diff/usr/share/nginx/html/index.html
+   50  sudo ls -la /var/lib/docker/overlay2/
+   51  sudo ls -l /var/lib/docker/overlay2/
+   52  sudo ls -l /var/lib/docker/overlay2/ | wc -l
+   53  sudo ls -l /var/lib/docker/overlay2/
+   54  docker run -d --name gs1 -p 8080:80  docker/getting-started
+   55  docker ps
+   56  docker run -dp 8081:80  docker/getting-started
+   57  docker ps
+   58  docker stop e
+   59  docker ps
+   60  docker ps -a
+   61  docker inspect e9b
+   62  docker ps -a
+   63  docker start interesting_wescoff
+   64  docker ps -a
+   65  docker pause  interesting_wescoff 
+   66  docker ps -a
+   67  docker top gs1
+   68  docker stat gs1
+   69  docker stats gs1
+   70  docker ps -a
+   71  docker run -dp 8081:80 docker/getting-started
+   72  docker ps -a
+   73  docker rm 89
+   74  docker ps -a
+   75  docker stop e
+   76  docker ps -a
+   77  docker run -dp 8081:80 docker/getting-started
+   78  docker ps -a
+   79  docker start e9
+   80  docker inspect e9
+   81  nan
+   82  nano
+   83  mc
+   84  docker start e9
+   85  sudo service docker restart
+   86  sudo service docker stop
+   87  sudo service docker start
+   88  docker start ce
+   89  docker start od
+   90  docker start 0d
+   91  docker start e9
+   92  docker ps
+   93  history -a
+   94  history
+   95  cd docker
+   96  mkdir history
+   97  history > history/hist_dock01_day1_1
+   98  git add .
+   99  git commit -m 'host init'
+  100  git config --global user.name a0z9
+  101  git config --global user.email a0z9@rambler.ru
+  102  git push
+  103  git add .
+  104  git commit -m 'host init'
+  105  git push
+  106  history -a
+  107  docker run --help
+  108  history -a
+  109  docker ps -a
+  110  docker logs e9
+  111  git pull
+  112  docker pull busybox
+  113  docker run -dit --name bbox1 busybox 
+  114  docker ps
+  115  top aux | gerp gs1
+  116  top aux | grep gs1
+  117  ps aux | grep gs1
+  118  ps aux | grep docker
+  119  docker top bbox1 
+  120  ps aux | grep 7352
+  121  ps aux | grep 7328
+  122  docker top bbox1 
+  123  sudo kill 7352
+  124  docker ps -a
+  125  docker top bbox1 
+  126  sudo kill -9 7352
+  127  docker top bbox1 
+  128  docker ps -a
+  129  docker start bbox1 
+  130  docker ps -a
+  131  docker top gs1
+  132  docker ps 
+  133  docker attach bbox1 
+  134  docker ps
+  135  docker ps -a
+  136  docker start bbox1 
+  137  docker attach bbox1 
+  138  docker ps -a
+  139  docker attach bbox1 --detach-keys='ctrl-p' 
+  140  docker attach bbox1 --detach-keys='ctrl-q' 
+  141  docker cp wapp.js bbox1:/mydirs/1
+  142  docker attach bbox1 --detach-keys='ctrl-q' 
+  143  docker ps -a
+  144  docker exec gs1 cat /mydirs/data/date1
+  145  docker exec bbox cat /mydirs/data/date1
+  146  docker exec bbox1 cat /mydirs/data/date1
+  147  docker exec bbox1 cat /mydirs/data/date2
+  148  docker exec bbox1 cat /mydirs/1/wapp.js
+  149  docker exec bbox1 ls -la /mydirs/1/
+  150  docker exec bbox1 ls -la /mydirs/1/ / /bin
+  151  docker exec bbox1 ls -la /mydirs/1/ /bin && ls /mydirs
+  152  docker exec bbox1 ls -la /mydirs/1/ /bin && ls /mydirs | grep wapp
+  153  docker exec bbox1 ls -la /mydirs/1/ /bin && ls /mydirs
+  154  docker exec bbox1 ls -la /mydirs/1/ && ls /mydirs | grep wapp
+  155  docker exec bbox1 sh -c 'ls -la /mydirs/1/ && ls /mydirs | grep wapp'
+  156  docker exec bbox1 sh -c 'ls -la /mydirs/1/ && ls /mydirs'
+  157  docker commit bbox1 mybbox/busy:1
+  158  docker images 
+  159  docker run -it --name bbox2 mybbox/busy:1
+  160  docker ps
+  161  docker history busybox:latest 
+  162  docker history mybbox/busy:1 
+  163  docker inspect bbox2
+  164  docker images
+  165  docker tag mybbox/busy:1 a0z9/box:0.1
+  166  docker images
+  167  docker login
+  168  docker push a0z9/box:0.1 
+  169  docker logout 
+  170  docker ps
+  171  docker rm -f bbox2
+  172  docker rmi mybbox/busy:1 
+  173  docker rmi a0z9/box:0.1 
+  174  docker images
+  175  docker search a0z9
+  176  docker search a0z9/box
+  177  docker pull a0z9/box
+  178  docker pull a0z9/box:0.1
+  179  docker images
+  180  docker run -d --name bb3 a0z9/box:0.1
+  181  docker ps -a
+  182  docker run -dit --name bb4 a0z9/box:0.1
+  183  docker ps -a
+  184  docker run -d --name bb-ping a0z9/box:0.1 ping 8.8.8.8
+  185  docker ps -a
+  186  docker logs bb-ping 
+  187  docker ps -a
+  188  docker rm bb-ping bb3 -f
+  189  docker ps -a
+  190  mkdir tars
+  191  docker export bb4 --output tars/bb4_export.tar
+  192  docker save a0z9/box --output tars/a0z9_box_save.tar
+  193  mc
+  194  docker import tars/bb4_export.tar bbox_imported
+  195  docker images
+  196  docker rmi --force a0z9/box:0.1 
+  197  docker ps -a
+  198  docker docker rm -f bb4
+  199  docker rm -f bb4
+  200  docker ps -a
+  201  docker images
+  202  docker rmi 6db
+  203  docker images
+  204  docker load --input tars/a0z9_box_save.tar 
+  205  docker images
+  206  docker ps
+  207  docker ps -q
+  208  docker pause $(docker ps -q)
+  209  docker ps
+  210  docker unpause $(docker ps -q)
+  211  docker ps
+  212  docker update gs1 --restart always
+  213  docker update ce19 --restart unless-stopped 
+  214  sudo service docker restart
+  215  docker ps
+  216  docker stop $(docker ps -q)
+  217  docker ps
+  218  sudo service docker restart
+  219  docker ps
+  220  docker start $(docker ps -qa)
+  221  docker ps
+  222  docker stats
+  223  docker run --help
+  224  docker 
+  225  docker update -m 220M --cpus 0.2 gs1 
+  226  docker update -m 20000000 --cpus 0.2 gs1 
+  227  docker stop gs1 
+  228  docker start -m 100M gs1 
+  229  docker start  
+  230  docker ps
+  231  docker update -m 20m bbox1
+  232  docker update -m 20000000 bbox1
+  233  docker update -m 200000000 bbox1
+  234  docker run --name bbox2 -dit -m 200000 busybox
+  235  docker run --name bbox2 -dit -m 7000000 busybox
+  236  docker top
+  237  docker start gs1 
+  238  docker update -m 20M --cpus 0.5 --memory-swap -1 gs1
+  239  docker update --cpus 0.5 bbox2
+  240  docker attach bbox2
+  241  history -a
+  242  docker rmi docker/getting-started:latest 
+  243  sudo mc
+  244  sudo -
+  245  su -
+  246  docker ps
+  247  docker images
+  248  docker stats
+  249  ls app1
+  250  ls dock/app1
+  251  docker build 
+  252  cd app2
+  253  cd docker/app2
+  254  ls
+  255  vim wapp.js 
+  256  wim wapp.js 
+  257  vim wapp.js 
+  258  docker rm -f w3
+  259  docker rmi wapp3
+  260  history -a
+  261  history > history/hist_dock01_day1_2
+  262  git add .
+  263  git commit -am 'Day1 final commit'
+  264  git push
+  265  git pull
+  266  mkdir app1
+  267  cd app1/
+  268  mkdir config
+  269  echo 'DATA=1.234' > config/data.conf
+  270  echo 'PORT=5432' > config/pg.conf
+  271  ls -la
+  272  ls -la config/
+  273  vim dockerfile
+  274  ls
+  275  cat dockerfile 
+  276  docker build -t bbox_image:1.0 .
+  277  docker inspect bbox_image:1.0 
+  278  docker history bbox_image:1.0 
+  279  docker history bbox_image:1.0 --no-trunc 
+  280  docker history bbox_image:1.0 --no-trunc | less
+  281  docker ps
+  282  docker run -dit --name bbox_image:1.0 
+  283  docker run -dit --name bbox3  bbox_image:1.0 
+  284  docker ps
+  285  docker attach bbox3
+  286  docker ps
+  287  cd ..
+  288  git add .
+  289  history > history/hist_dock01_day2_1
+  290  git add .
+  291  git commit -m 'day2, dockerfiles'
+  292  git push
+  293  docker create -it --name bbox4 bbox_image:1.0 
+  294  docker ps -a
+  295  docker start bbox4
+  296  docker ps -a
+  297  cd app1/
+  298  cp dockerfile dockerfile2 
+  299  cd ..
+  300  vim  app1/dockerfile2
+  301  docker build -t bbox_image:2.0 -f dockerfile2 ./app1
+  302  docker build -t bbox_image:2.0 -f app1/dockerfile2 ./app1
+  303  docker images
+  304  docker run --rm -dit bbox_image:2.0 env 
+  305  docker run --rm -it bbox_image:2.0 env 
+  306  docker ps -aq | wc -l
+  307  docker run --rm -it bbox_image:2.0 env 
+  308  docker ps -aq | wc -l
+  309  docker run --rm -it bbox_image:2.0 env | grep VERSION
+  310  docker run --rm -it bbox_image:2.0 env | grep VERSION | wc -l
+  311  docker run --rm -it bbox_image:2.0 cat /var/app/pg.conf 
+  312  vim app1/dockerfile
+  313  cd app1/
+  314  docker build -t bbox_image:2.1 -f dockerfile2 .
+  315  cd ..
+  316  ls -la
+  317  less wapp.js 
+  318  mkdir app2
+  319  cp wapp.js app2/
+  320  cd app2
+  321  ls
+  322  docker search node
+  323  docker search node/
+  324  docker search alpine
+  325  docker search node
+  326  vim dockerfile
+  327  docker build -t wapp .
+  328  docker run --name w1 -d wapp
+  329  docker ps
+  330  cat wapp.js 
+  331  docker ps
+  332  docker exec -it w1 env
+  333  docker exec -it w1 ip a
+  334  vim dockerfile 
+  335  docker build -t wapp2 .
+  336  docker run -d --name w2 wapp2
+  337  docker ps
+  338  docker rm -f w2
+  339  docker run -d --name w2 -p 8090:8080 wapp2
+  340  docker ps
+  341  docker rm -f w2
+  342  docker run -d --name w2 -e DOCK_HOST=$(uname -n)  -p 8090:8080 wapp2
+  343  docker ps
+  344  cd ..
+  345  history > history/hist_dock01_day2_2
+  346  git add .
+  347  git commit -m 'Dockerfile wapp.js'
+  348  git push
+  349  docker logs w2
+  350  cd app2
+  351  cat wapp.js 
+  352  docker run -d --name w3 -e DOCK_HOST=$(uname -n)  -p 8091:8080 wapp3
+  353  docker logs w3
+  354  docker exec -i w3 ls
+  355  docker exec -i w3 ls /var/log/wapp
+  356  docker exec -i w3 cat /var/log/wapp/wapp.log
+  357  docker run -d --name w3 -e DOCK_HOST=$(uname -n)  -p 8091:8080 wapp3
+  358  docker exec -i w3 cat /var/log/wapp/wapp.log
+  359  docker rm -f w3
+  360  docker run -d --name w3 -e DOCK_HOST=$(uname -n)  -p 8091:8080 wapp3
+  361  docker exec -i w3 cat /var/log/wapp/wapp.log
+  362  docker volume ls
+  363  docker rm -f w3
+  364  docker run -d --name w3 -v /var/log/wapp -e DOCK_HOST=$(uname -n)  -p 8091:8080 wapp3
+  365  docker volume ls
+  366  docker exec -i w3 cat /var/log/wapp/wapp.log
+  367  docker run -d --name w3 -v /var/log/wapp -e DOCK_HOST=$(uname -n)  -p 8092:8080 wapp4
+  368  docker run -d --name w4 -v /var/log/wapp -e DOCK_HOST=$(uname -n)  -p 8092:8080 wapp3
+  369  docker exec -i w3 cat /var/log/wapp/wapp.log
+  370  docker exec -i w4 cat /var/log/wapp/wapp.log
+  371  docker volume ls
+  372  docker rm -f w3
+  373  docker volume ls
+  374  docker volume inspect 78a300f24e70524bf549e452ef63e6db13f9e224134e56f9b601467b6f0b6c27
+  375  docker volume inspect e0f32bb2ef4353d72a47616b66dd998696d77800552f470c6bfce6d764953924
+  376  sudo cat /var/lib/docker/volumes/78a300f24e70524bf549e452ef63e6db13f9e224134e56f9b601467b6f0b6c27/_data
+  377  sudo ls /var/lib/docker/volumes/78a300f24e70524bf549e452ef63e6db13f9e224134e56f9b601467b6f0b6c27/_data
+  378  sudo cat /var/lib/docker/volumes/78a300f24e70524bf549e452ef63e6db13f9e224134e56f9b601467b6f0b6c27/_data/wapp.log
+  379  sudo cat /var/lib/docker/volumes/
+  380  sudo ls /var/lib/docker/volumes/
+  381  sudo ls -la /var/lib/docker/volumes/
+  382  docker volume prune
+  383  sudo ls -la /var/lib/docker/volumes/
+  384  docker volume ls
+  385  docker ps 
+  386  docker rm -f w4
+  387  docker volume create wapp_volume
+  388  docker volume ls
+  389  docker volume inspect wapp_volume 
+  390  docker run -d --name w4 -v wapp_volume:/var/log/wapp -e DOCK_HOST=$(uname -n)  -p 8092:8080 wapp3
+  391  docker run -d --name w3 -v wapp_volume:/var/log/wapp -e DOCK_HOST=$(uname -n)  -p 8091:8080 wapp3
+  392  docker exec -i w4 cat /var/log/wapp/wapp.log
+  393  docker exec -i w4 env
+  394  docker exec -i w4 cat /var/log/wapp/wapp.log
+  395  history -a
+  396  docker ps
+  397  ip a
+  398  docker attach bbox4
+  399  cd ..
+  400  history -a
+  401  history 
+  402  history > ../history/hist_dock01_day2_3
+  403  cd ..
+  404  git add .
+  405  git commit -m 'volumes'
+  406  git push
+  407  cd app2
+  408  ls
+  409  cp dockerfile dockerfile_volume
+  410  vim dockerfile_volume 
+  411  docker build -t wapp_vol -f dockerfile_volume .
+  412  docker images
+  413  docker volume  ls
+  414  docker run -d --name w_vol -e DOCK_HOST=$(uname -n)  -p 8093:8080 wapp_vol
+  415  docker volume  ls
+  416  docker inspect w_vol 
+  417  docker inspect --format '{{.Mounts}}'
+  418  docker inspect -f '{{.Mounts}}'
+  419  docker inspect -f '{{.Mounts.}}'
+  420  docker inspect -f '{{ .Mounts }}' w_vol
+  421  docker inspect -f '{{ .Mounts.volume }}' w_vol
+  422  docker inspect -f '{{ .lumes }}' w_vol
+  423  docker inspect -f '{{ .Mounts }}' w_vol
+  424  docker inspect -f '{{ (index .Mounts 0) }}' w_vol
+  425  docker inspect -f '{{ (index .Mounts 0).Source }}' w_vol
+  426  docker inspect -f '{{ (index .Mounts 0).Name }}' w_vol
+  427  docker inspect -f '{{ (index .Mounts 0).Name }}' w3
+  428  docker inspect -f '{{ (index .Mounts 0).Name }}' w4
+  429  docker inspect -f '{{ (index .Mounts 0).Name }}' w5
+  430  docker inspect -f '{{ (index .Mounts 0).Name }}' w_vol 
+  431  docker inspect -f '{{ (index .Mounts 0).Name }}' $(docker ps -q) 
+  432  ps
+  433  ls
+  434  docker run -d --name w_user_vol -v /home/student/docker/app2:/app:ro -e DOCK_HOST=$(uname -n) -p 8095:8080 node:current-alpine node /app/wapp.js
+  435  docker ps
+  436  docker exec w_user_vol ls
+  437  docker exec w_user_vol ls /app
+  438  docker exec w_user_vol touch /app/1
+  439  docker volume ls
+  440  docker inspect w_user_vol 
+  441  cd ..
+  442  history > history/hist_dock01_day2_hist4
+  443  git add .
+  444  git commit -m 'bind catalogs'
+  445  git push
+  446  vim app2/dockerfile_volume 
+  447  ip a
+  448  docker ps
+  449  docker stop $(docker ps)
+  450  docker ps
+  451  docker ps -a
+  452  ip a
+  453  docker start bbox4
+  454  docker start w3
+  455  docker start w_user_vol 
+  456  ip a
+  457  docker network ls
+  458  docker network inspect bridge 
+  459  ping 172.17.0.2
+  460  ping 172.17.0.3
+  461  ping 172.17.0.4
+  462  docker exec bbox4 ip a
+  463  docker exec bbox4 cat /etc/hosts
+  464  docker run -dit --name bbox_no_ipv6 --sysctl net.ipv6.conf.all.disable_ipv6=1 busybox
+  465  docker ps
+  466  docker exec bbox_no_ipv6 ip a
+  467  docker exec bbox_no_ipv6 cat /etc/hosts
+  468  ping -6 localhost 
+  469  docker exec bbox_no_ipv6 ping -6 localhost
+  470  docker attach bbox_no_ipv6
+  471  docker exec bbox4
+  472  docker attach bbox4
+  473  docker ps
+  474  docker run -dit --name bbox5 --link w3:wapp busybox
+  475  docker attach bbox5
+  476  history -a
+  477  history > history/hist_dock01_day2_5
+  478  git add .
+  479  git commit -m 'networks, --link'
+  480  git push
+  481  docker network create bb_net
+  482  docker network ls
+  483  docker network inspect bb_net 
+  484  docker ps
+  485  docker ps -a
+  486  docker start bbox1 bbox2
+  487  docker start bbox1 bbox3
+  488  docker ps -a
+  489  docker ps
+  490  docker exec bbox1 ping bbox2
+  491  docker exec bbox1 ip a
+  492  docker network connect bb_net bbox1
+  493  docker network connect bb_net bbox3
+  494  docker network connect bb_net bbox1
+  495  docker network connect bb_net bbox3
+  496  docker exec bbox1 ip a
+  497  docker network disconnect bridge bbox1
+  498  docker network disconnect bridge bbox2
+  499  docker network disconnect bridge bbox3
+  500  docker exec bbox1 ping bbox2
+  501  docker exec bbox1 ping bbox3
+  502  docker exec bbox1 cat /etc/hosts
+  503  docker exec bbox1 cat /etc/resolv.conf
+  504  docker exec bbox5 cat /etc/resolv.conf
+  505  docker exec bbox1 cat /etc/resolv.conf
+  506  docker exec bbox5 cat /etc/resolv.conf
+  507  docker network create --subnet 192.168.111.0/24 --ipv6 false wapp_net
+  508  docker network create --subnet 192.168.111.0/24 --ipv6 false -- wapp_net
+  509  docker network create --subnet=192.168.111.0/24 --ipv6=false  wapp_net
+  510  docker network ls
+  511  ip a
+  512  docker network inspect wapp_net 
+  513  docker network create --subnet=192.168.112.0/24 --gateway=192.168.112.1 --ipv6=false  wapp_net2
+  514  docker network inspect wapp_net2 
+  515  docker search registry
+  516  docker pull registry
+  517  docker pull registry:v2
+  518  docker pull registry:2
+  519  docker inspect registry:2
+  520  docker run -d --name registry -p 5000:5000 registry:2
+  521  docker ps
+  522  docker update --restart always registry 
+  523  docker ps
+  524  curl GET localhost:5000/v2/_catalog
+  525  curl -X GET localhost:5000/v2/_catalog
+  526  docker images
+  527  docker tag bbox_image:2.0 localhost:5000/busy:2.0
+  528  docker push localhost:5000/busy:2.0
+  529  curl -X GET localhost:5000/v2/_catalog
+  530  curl -X GET localhost:5000/v2/busy/tags/list
+  531  docker tag bbox_image:1.0 localhost:5000/busy:1.0
+  532  docker push localhost:5000/busy:1.0
+  533  curl -X GET localhost:5000/v2/busy/tags/list
+  534  docker rmi bbox_image:1.0
+  535  docker images
+  536  docker rmi localhost:5000/busy:1.0
+  537  docker rm -f 162
+  538  docker rmi localhost:5000/busy:1.0
+  539  docker rm -f cbe
+  540  docker rmi localhost:5000/busy:1.0
+  541  docker images
+  542  docker rmi bbox_image:2.0
+  543  docker rmi bbox_image:2.1
+  544  docker images
+  545  docker pull localhost:5000/busy:1.1
+  546  docker pull localhost:5000/busy:1.0
+  547  docker images
+  548  history > history/hist_dock01_day2_6
+  549  git add .
+  550  git commit -m 'local registry'
+  551  git push
+  552  sudo vim /etc/hosts
+  553  ping dock02
+  554  curl -X GET localhost:5000/v2/_catalog
+  555  curl localhost:5000/v2/_catalog
+  556  curl 192.168.56.11:5000/v2/_catalog
+  557  curl https://192.168.56.11:5000/v2/_catalog
+  558  curl http://192.168.56.11:5000/v2/_catalog
+  559  docker push dock01:5000/busy:2.0
+  560  docker push 192.168.56.11:5000/busy:2.0
+  561  cd ..
+  562  cd docker
+  563  mkdir certs
+  564  openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/my.key -x509 -days 3650 -out certs/my.crt -addext 'subjectAltName=DNS:dock01'
+  565  cat certs/my.crt 
+  566  sudo mkdir -p /etc/docker/certs.d/dock01:5001
+  567  sudo cp certs/my.crt /etc/docker/certs.d/dock01\:5001/ca.crt
+  568  docker run --name registry5001 -d -p 5001:5000 -v /home/student/docker/certs:/certs -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/my.crt -e REGISTRY_HTTP_TLS_KEY=/certs/my.key --restart=always registry:2
+  569  docker ps
+  570  sudo service  docker restart
+  571  docker ps
+  572  scp certs/my.crt dock02:/home/student/docker/ca.crt
+  573  docker images
+  574  docker tag wapp2 dock01:5001/wapp:2.0
+  575  docker push dock01:5001/wapp:2.0
+  576  docker tag 852 dock01:5001/busy:2.0
+  577  docker push dock01:5001/busy:2.0
+  578  curl dock01:5001/v2/_catalog
+  579  curl https://dock01:5001/v2/_catalog
+  580  curl --cacert certs/my.crt  https://dock01:5001/v2/_catalog
+  581  sudo mkdir -p /etc/docker/certs.d/dock01:5002
+  582  sudo cp certs/my.crt /etc/docker/certs.d/dock01\:5002/ca.crt
+  583  sudo apt install apache2-utils -y
+  584  mkdir auth
+  585  htpasswd -Bbn student pass >> auth/htpasswd
+  586  cat auth/htpasswd 
+  587  htpasswd -Bbn andrei pass >> auth/htpasswd
+  588  cat auth/htpasswd 
+  589  docker run --name registry2 -d -p 5002:5000 -v /home/student/docker/certs:/certs -v /home/student/docker/auth:/auth \ 
+  590  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/my.crt -e REGISTRY_HTTP_TLS_KEY=/certs/my.key -e REGISTRY_AUTH=htpasswd -e REGISTRY_AUTH_HTPASSWD_REALM="Registry Realm" -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/htpasswd \
+  591  vim reg2auth.sh
+  592  chmod +x reg2auth.sh 
+  593  ./reg2auth.sh 
+  594  vim reg2auth.sh
+  595  docker ps
+  596  vim NetworkRegistryReg.md 
+  597  history > history/hist_dock01_day3_1
+  598  git add .
+  599  git commit -m 'network registry'
+  600  git push
+  601  docker images
+  602  docker tag 852 dock01:5002/busy:2.0
+  603  docker images
+  604  docker push dock01:5002/busy:2.0
+  605  docker login dock01:5002
+  606  docker push dock01:5002/busy:2.0
+  607  cat ../.docker/config.json 
+  608  docker tag wapp3 dock01:5002/wapp:3.0
+  609  docker logout 
+  610  cat ../.docker/config.json 
+  611  docker logout dock01:5002
+  612  cat ../.docker/config.json 
+  613  docker push dock01:5002/busy:2.0
+  614  curl --cacert ca.crt -u student:pass  -X DELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  615  curl --cacert certs/my.crt -u student:pass  -X DELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  616  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  617  curl --s -cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  618  curl -cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  619  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  620  curl --cacert certs/my.crt -u student:pass -X  DELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  621  cp reg2auth.sh 
+  622  cp reg2auth.sh reg2auth_with_del.sh 
+  623  vim reg2auth_with_del.sh 
+  624  docker rm -f registry2
+  625  ./reg2auth_with_del.sh 
+  626  docker ps
+  627  docker push dock01:5002/wapp:3.0 
+  628  docker login dock01:5002
+  629  docker push dock01:5002/wapp:3.0 
+  630  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  631  curl --cacert certs/my.crt -u student:pass -X GDELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  632  curl --cacert certs/my.crt -u student:pass -X DELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  633  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  634  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/_catalog
+  635  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  636  docker push dock01:5002/wapp:3.0 
+  637  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  638  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  639  curl --cacert certs/my.crt -u student:pass -X GDELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  640  curl --cacert certs/my.crt -u student:pass -X DELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  641  docker pull dock01:5002/wapp:3.0 
+  642  docker restart registry2
+  643  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  644  docker push dock01:5002/wapp:3.0 
+  645  docker push dock01:5002/busy:2.0
+  646  docker images
+  647  docker tag wapp dock01:5002/wapp:1.0
+  648  docker push dock01:5002/wapp:1.0 
+  649  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  650  curl --cacert certs/my.crt -u student:pass -X DELETE https://dock01:5002/v2/wapp/manifests/sha256:2d0b65710f227aec639e5369e59466da11aea183405469f606c107f1acf8fc49
+  651  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  652  docker push dock01:5002/wapp:3.0 
+  653  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  654  curl --cacert certs/my.crt -u student:pass -X DELETE https://dock01:5002/v2/wapp/manifests/sha256:4880e8f3f1a63a1e19c521f4b4228c2e69719683dcca113afa348763b6fd0747
+  655  curl --cacert certs/my.crt -u student:pass -X GET https://dock01:5002/v2/wapp/tags/list
+  656  ls
+  657  ls scripts/
+  658  cat scripts/install-docker-compose 
+  659  sudo apt install docker-compose-plugin
+  660  docker ps
+  661  docker images
+  662  docker tag 852 dock01:5000/busy:2.0
+  663  docker tag 852 192.168.56.11:5000/busy:2.0
+  664  ip a
+  665  ls
+  666  cd docker
+  667  ls
+  668  mkdir app3
+  669  cd app3
+  670  vim docker-compose.yaml
+  671  sudo apt install yamllinter
+  672  sudo apt install yamllint
+  673  yamllint docker-compose.yaml 
+  674  docker compose up -d
+  675  docker compose top gst1 
+  676  docker compose exec gst1 env
+  677  docker ps
+  678  cd ..
+  679  history -a
+  680  history > history/hist_dock01_day3_2
+  681  git add .
+  682  git commit -m 'compose'
+  683  git push
+  684  docker compose exec gst1 ls /
+  685* docker compose exec gst1
+  686  docker compose ls
+  687  cd app3
+  688  docker compose exec gst1 ls /
+  689  docker volume ls
+  690  docker volume prune -f
+  691  docker volume ls
+  692  docker compose down 
+  693* 
+  694  docker network ls
+  695  docker compose down --volumes 
+  696  docker network ls
+  697  docker volume ls
+  698  docker compose up -d
+  699  cat docker-compose.yaml 
+  700  vim docker-compose.yaml 
+  701  docker compose restart
+  702  docker compose down 
+  703  docker compose up -d
+  704  cd .
+  705  cd ..
+  706  git commit -am 'compose2'
+  707  git push
+  708  mc
+  709  cd app3
+  710  mv dockerfile_volume dockerfile
+  711  ls
+  712  mkdir wapp
+  713  mv docker wapp/
+  714  mv dockerfile wapp/
+  715  mv wapp.js wapp/
+  716  ls
+  717  cp docker-compose.yaml docker-compose-wapp.yaml 
+  718  vim docker-compose-wapp.yaml 
+  719  yamllint docker-compose-wapp.yaml 
+  720  docker compose down 
+  721  docker compose down --volumes 
+  722  ls
+  723  docker compose --file docker-compose-wapp.yaml up -d
+  724  docker volume ls
+  725  docker volume inspect app3_wapp_vol 
+  726  sudo ls /var/lib/docker/volumes/app3_wapp_vol/_data"
+  727  sudo ls /var/lib/docker/volumes/app3_wapp_vol/_data
+  728  sudo cat /var/lib/docker/volumes/app3_wapp_vol/_data/wapp.log
+  729  history > ../history/hist_dock01_day3_3
+  730  cd ..
+  731  git add .
+  732  git commit -m '2 services -> compose'
+  733  git push
+  734  cd app3
+  735  docker compose ps
+  736  docker compose --file docker-compose-wapp.yaml ps
+  737  docker compose --file docker-compose-wapp.yaml down
+  738  docker compose --file docker-compose-wapp.yaml ps
+  739  cp docker-compose-wapp.yaml docker-compose-limits.yaml 
+  740  mv docker-compose.yaml docker-compose-1st.yaml
+  741  mv docker-compose-limits.yaml docker-compose.yaml
+  742  vim docker-compose.yaml 
+  743  yamllint docker-compose.yaml 
+  744  vim docker-compose.yaml 
+  745  docker compose up -d
+  746  vim docker-compose.yaml 
+  747  docker compose up -d
+  748  vim docker-compose.yaml 
+  749  docker compose up -d
+  750  docker compose ps
+  751  docker compose ls
+  752  docker stats
+  753  docker compose down
+  754  docker compose up -d
+  755  docker exec app3-bbox-1 ip a
+  756  vim docker-compose.yaml 
+  757  cd ..
+  758  git pull
+  759  git add .
+  760  git commit -m 'compose - 3 services - rewsources'
+  761  git push
+  762  docker compose ps
+  763  cd app3
+  764  docker compose ps
+  765  docker port 
+  766  docker port $(docker ps -q)
+  767  docker ps -q
+  768  docker ps
+  769  docker ps -a
+  770  cd ../app-library/
+  771  docker compose up -d
+  772  jq
+  773  sudo apt install jq
+  774  echo [{"id":4,"author":"Jack London","title":"White silence","isbn":"ISBN 987-5-496-03214-5","year":"1943","record_created":"2022-12-07T13:41:21.000Z"},{"id":5,"author":"Jack London","title":"Martin Eden","isbn":"ISBN 987-5-496-03214-8","year":"1963","record_created":"2022-12-07T13:41:21.000Z"},{"id":6,"author":"Alexei Tolstoi","title":"Aelita","isbn":"ISBN 821-5-753-12345-9","year":"1987","record_created":"2022-12-07T13:41:21.000Z"}] > jq
+  775  echo [{"id":4,"author":"Jack London","title":"White silence","isbn":"ISBN 987-5-496-03214-5","year":"1943","record_created":"2022-12-07T13:41:21.000Z"},{"id":5,"author":"Jack London","title":"Martin Eden","isbn":"ISBN 987-5-496-03214-8","year":"1963","record_created":"2022-12-07T13:41:21.000Z"},{"id":6,"author":"Alexei Tolstoi","title":"Aelita","isbn":"ISBN 821-5-753-12345-9","year":"1987","record_created":"2022-12-07T13:41:21.000Z"}] | jq
+  776  echo '[{"id":4,"author":"Jack London","title":"White silence","isbn":"ISBN 987-5-496-03214-5","year":"1943","record_created":"2022-12-07T13:41:21.000Z"},{"id":5,"author":"Jack London","title":"Martin Eden","isbn":"ISBN 987-5-496-03214-8","year":"1963","record_created":"2022-12-07T13:41:21.000Z"},{"id":6,"author":"Alexei Tolstoi","title":"Aelita","isbn":"ISBN 821-5-753-12345-9","year":"1987","record_created":"2022-12-07T13:41:21.000Z"}]' | jq
+  777  docker volume create portainer_data
+  778  docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+  779  docker rm -f portainer
+  780  cd ..
+  781  git add .
+  782  history > history/hist_dock01_day3_4
