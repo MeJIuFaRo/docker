@@ -1,0 +1,20 @@
+FROM node:12
+#FROM node:alpine
+  
+LABEL maintainer="a0z9@rambler.ru"
+
+RUN node --version
+
+RUN apt-get update && apt-get install -y apt-utils && apt-get install -y  curl
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+
+RUN apt-get update && apt-get install -y npm  
+
+WORKDIR /var/www/app
+
+RUN npm init -y
+RUN npm install --save express body-parser mariadb
+
+COPY ./wapp_db.js .
+
+ENTRYPOINT ["node", "wapp_db.js"]
