@@ -4,7 +4,7 @@ services:
   gst1:
     image: docker/getting-started
     ports:
-      - "8081:8080"
+      - "8081:80"
     
     volumes:
       - "vol2:/s1"
