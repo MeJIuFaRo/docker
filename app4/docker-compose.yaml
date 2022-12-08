@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  gst1:
+    image: docker/getting-started
+    ports:
+      - "8099:80"
+    
+    volumes:
+      - "vol2:/s1"
+      - "/s2"
+   
+    environment:
+      - PROD
+      - VERSION=1.0
+      - DOCK_HOST=dock01
+
+  bbox:
+    image: busybox
+    command: dd if=/dev/zero of=/dev/null bs=4096
+    deploy:
+      resources:
+        limits:
+          cpus: '0.30'
+          memory: 10M  
+
+networks:
+  default:
+    name: mynet3
+    ipam:
+      driver: default
+      config: 
+        - subnet: 172.30.40.0/24
+
+volumes:
+  vol2:
